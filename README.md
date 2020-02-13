@@ -2,7 +2,7 @@
 
 O objetivo deste projeto é explorar o conceito de microserviços e algumas outras tecnologias como Redis, WebSocket e Docker. O framework escolhido para o backend será o nestjs. Utilizei como referencia um projeto que mantenho atualizado com a maioria das bibliotecas que utilizo. (https://github.com/pcnandes/nest_reference_project). Boa parte da documentação estará no código.
 
-# Por que fazer um Blog
+# Por que fazer um Blog?
 
 Pensei em um blog por ter um modelo de dados simples e a possibilidade de testar algumas situações interessantes tanto do backend quanto no frontend. Como por exemplo, enviar notificações ao usuário (push, websockets, email) utilizando o conceito de filas (Redis).
 
@@ -17,17 +17,20 @@ Pensei em um blog por ter um modelo de dados simples e a possibilidade de testar
 - _enviar notificações via push quando suas postagens receber comentários ou curtidas_;
 - permitir pesquisar nas postagens e comentários;
 
-# modelo de dados
+# Modelo de dados
 
-![Modelo de Dados](/docs/modelo.svg)
-
+<p align="center">
+  ![Modelo de Dados](/docs/modelo.svg)
+</p>
 - usuario pode criar postagens;
 - usuario pode comentar postagens;
 - usuario pode curtir postagens;
 
 # Distribuísção dos serviços
 
-![Modelo de Dados](/docs/microservices.svg)
+<p align="center">
+  ![Modelo de Dados](/docs/microservices.svg)
+</p>
 
 Para esse estudo optei por criar 4 serviços:
 
