@@ -49,3 +49,9 @@ Como a aplicação não possui necessidade de uma forte integridade relacional e
 `$ npm install --save @nestjs/mongoose mongoose`
 
 # Organização do projeto
+
+https://docs.nestjs.com/cli/usages
+
+`$ nest g module modules/usuario`
+`$ nest g service modules/usuario`
+`$ nest g controller modules/usuario`
