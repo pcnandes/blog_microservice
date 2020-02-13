@@ -22,6 +22,7 @@ Pensei em um blog por ter um modelo de dados simples e a possibilidade de testar
 <p align="center">
   <img  src="/docs/modelo.svg" alt="Modelo de Dados">
 </p>
+
 - usuario pode criar postagens;
 - usuario pode comentar postagens;
 - usuario pode curtir postagens;
