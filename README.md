@@ -20,16 +20,16 @@ Pensei em um blog por ter um modelo de dados simples e a possibilidade de testar
 # Modelo de dados
 
 <p align="center">
-  ![Modelo de Dados](/docs/modelo.svg)
+  <img  src="/docs/modelo.svg" alt="Modelo de Dados">
 </p>
 - usuario pode criar postagens;
 - usuario pode comentar postagens;
 - usuario pode curtir postagens;
 
-# Distribuísção dos serviços
+# Separação dos serviços
 
 <p align="center">
-  ![Modelo de Dados](/docs/microservices.svg)
+  <img  src="/docs/microservices.svg" alt="Serviços">
 </p>
 
 Para esse estudo optei por criar 4 serviços:
