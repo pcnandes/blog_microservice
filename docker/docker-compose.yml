@@ -1,0 +1,34 @@
+version: '3'
+# referencia https://medium.com/@renato.groffe/mongodb-mongo-express-docker-compose-montando-rapidamente-um-ambiente-para-uso-824f25ca6957
+
+services:
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      # ME_CONFIG_BASICAUTH_USERNAME: mongoex
+      # ME_CONFIG_BASICAUTH_PASSWORD: mongoex
+      ME_CONFIG_MONGODB_PORT: 27017
+      # ME_CONFIG_MONGODB_ADMINUSERNAME: mongo
+      # ME_CONFIG_MONGODB_ADMINPASSWORD: mongo
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+
+  mongo:
+    image: mongo
+    # environment:
+    #  MONGO_INITDB_ROOT_USERNAME: mongo
+    #  MONGO_INITDB_ROOT_PASSWORD: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - /home/08215225748/Programas/docker/MongoDB:/data/db
+    networks:
+      - mongo-compose-network
+
+networks:
+  mongo-compose-network:
+    driver: bridge
