@@ -109,6 +109,17 @@ db.alunos.update(
 }
 ```
 
+**Alguns Operadores de update**
+$set: muda o valor de um campo;
+$unset: remove um campo do documento;
+$rename: muda o nome de um campo do documento;
+$inc: quando um campo numérico precisa ser incrementado (ou decrementado, usando um valor negativo);
+\$mul: quando um campo numérico precisa ser multiplicado;
+
+**mongo nao indexa ausencia de valores por isso prefira os operadoes $e, $in e $all no lugar de $ne**
+
+**use explain() para analisar as queryes**
+
 #### Update em arrays
 
 https://docs.mongodb.com/manual/reference/operator/update-array/
@@ -266,3 +277,9 @@ db.alunos.aggregate([
   { $skip: 1 },
 ]);
 ```
+
+## Definindo o nivel de operação (ACID)
+
+Mongo permite definir os niveis de operações, e controle de concorrencia.
+https://docs.mongodb.com/manual/reference/read-concern/
+https://docs.mongodb.com/manual/reference/write-concern/

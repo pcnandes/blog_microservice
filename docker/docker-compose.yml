@@ -1,9 +1,11 @@
 version: '3'
 # referencia https://medium.com/@renato.groffe/mongodb-mongo-express-docker-compose-montando-rapidamente-um-ambiente-para-uso-824f25ca6957
+# executar docker-compose up -d
+# acessar diretamente o mongo: docker exec -it mongo bash
 
 services:
   mongo-express:
-    image: mongo-express
+    image: mongo-express:latest
     ports:
       - 8081:8081
     environment:
@@ -18,14 +20,14 @@ services:
       - mongo-compose-network
 
   mongo:
-    image: mongo
+    image: mongo:latest
     # environment:
     #  MONGO_INITDB_ROOT_USERNAME: mongo
     #  MONGO_INITDB_ROOT_PASSWORD: mongo
     ports:
       - '27017:27017'
     volumes:
-      - /home/docker/MongoDB:/data/db
+      - ~/docker/MongoDB:/data/db
     networks:
       - mongo-compose-network
 

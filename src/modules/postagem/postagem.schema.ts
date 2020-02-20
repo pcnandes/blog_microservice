@@ -1,14 +1,28 @@
 import * as mongoose from 'mongoose';
-import { Comentario } from '../comentario/comentario.schema';
-import { Curtida } from '../curtida/curtida.schema';
-import { Usuario } from '../usuario/usuario.schema';
+// import { Comentario } from '../comentario/comentario.schema';
+// import { Curtida } from '../curtida/curtida.schema';
+// import { UsuarioSchema } from '../usuario/usuario.schema';
 
-export const Postagem = new mongoose.Schema({
+export const PostagemSchema = new mongoose.Schema({
   titulo: String,
   conteudo: String,
-  autor: Usuario,
-  criacao: Date,
-  desativacao: Date,
-  comentarios: [Comentario],
-  curtidas: [Curtida],
+  // autor: UsuarioSchema,
+  autor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Usuario',
+  },
+  criacao: { type: Date, default: Date.now },
+  tags: [String],
+  // comentarios: [Comentario],
+  // curtidas: [Curtida],
+  // qtdCurtidas: Number,
+  curtidas: [
+    {
+      autor: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario',
+      },
+      data: { type: Date, default: Date.now },
+    },
+  ],
 });
