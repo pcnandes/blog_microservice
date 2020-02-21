@@ -18,7 +18,7 @@ export const PostagemSchema = new mongoose.Schema({
   // qtdCurtidas: Number,
   curtidas: [
     {
-      autor: {
+      autorCurtida: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Usuario',
       },

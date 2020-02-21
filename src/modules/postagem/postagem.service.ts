@@ -15,9 +15,14 @@ export class PostagemService {
   }
 
   async findAll(): Promise<Postagem[]> {
-    return this.model
-      .find()
-      .populate('autor', 'nome')
-      .exec();
+    return (
+      this.model
+        .find()
+        .populate('autor', 'nome')
+        // .populate('autorCurtida', 'nome')
+        // .populate('autor', 'nome')
+        .populate('autorCurtida', 'nome')
+        .exec()
+    );
   }
 }
