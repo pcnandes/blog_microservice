@@ -10,4 +10,6 @@ export interface Postagem extends Document {
   readonly criacao: Date;
   readonly desativacao: Date;
   readonly tags: string[];
+  // criar interface curtida
+  readonly curtidas: [];
 }

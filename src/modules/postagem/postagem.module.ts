@@ -4,6 +4,8 @@ import { PostagemController } from './postagem.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PostagemSchema } from './postagem.schema';
 import { UsuarioSchema } from '../usuario/usuario.schema';
+import { CurtidaService } from '../curtida/curtida.service';
+import { CurtidaModule } from '../curtida/curtida.module';
 
 @Module({
   imports: [
@@ -11,8 +13,9 @@ import { UsuarioSchema } from '../usuario/usuario.schema';
       { name: 'Postagem', schema: PostagemSchema },
       { name: 'Usuario', schema: UsuarioSchema },
     ]),
+    CurtidaModule,
   ],
-  providers: [PostagemService],
+  providers: [PostagemService, CurtidaService],
   controllers: [PostagemController],
 })
 export class PostagemModule {}

@@ -21,7 +21,7 @@ export class PostagemService {
         .populate('autor', 'nome')
         // .populate('autorCurtida', 'nome')
         // .populate('autor', 'nome')
-        .populate('autorCurtida', 'nome')
+        // .populate('autorCurtida', 'nome')
         .exec()
     );
   }
