@@ -7,7 +7,6 @@ import { CurtidaSchema } from '../curtida/curtida.schema';
 export const PostagemSchema = new mongoose.Schema({
   titulo: String,
   conteudo: String,
-  // autor: UsuarioSchema,
   autor: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Usuario',
@@ -15,10 +14,7 @@ export const PostagemSchema = new mongoose.Schema({
   criacao: { type: Date, default: Date.now },
   tags: [String],
   // comentarios: [Comentario],
-  // curtidas: [Curtida],
-  // qtdCurtidas: Number,
-  // criar classe curtida
-  curtidas: [
+  /*curtidas: [
     {
       autor: {
         type: mongoose.Schema.Types.ObjectId,
@@ -26,6 +22,6 @@ export const PostagemSchema = new mongoose.Schema({
       },
       data: { type: Date, default: Date.now },
     },
-  ],
+  ],*/
   // curtidas: [CurtidaSchema],
 });
