@@ -8,12 +8,13 @@ import { Comentario } from '../comentario/comentario.interface';
 @Injectable()
 export class CurtidaService {
   constructor(@InjectModel('Curtida') private readonly model: Model<Curtida>) {}
+
   // TODO permitir curtir comentario ou postagem
-  async curtir(item: Postagem): Promise<Curtida> {
-    const usuarioLogado = { _id: 'aaaaaa' };
+  async curtir(idPostagem: string): Promise<Curtida> {
+    const usuarioLogado = { _id: '5e59c2dbfb6f7f5551b09a38' };
     const newCurtida = new this.model({
       autor: usuarioLogado,
-      postagem: item,
+      postagem: { _id: idPostagem },
     });
     return newCurtida.save();
   }
